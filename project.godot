@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="RTS-game"
+config/features=PackedStringArray("4.1", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="RTS-game"
+
+[layer_names]
+
+2d_render/layer_1="world"
+2d_render/layer_2="building"
+2d_render/layer_3="entity"
+2d_render/layer_4="neutral-entity"
+2d_render/layer_5="friend-entity"
+2d_render/layer_6="enemy-entity"
+2d_physics/layer_1="world"
+2d_physics/layer_2="building"
+2d_physics/layer_3="entity"
+2d_physics/layer_4="neutral-entity"
+2d_physics/layer_5="friend-entity"
+2d_physics/layer_6="enemy-entity"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
