@@ -1,1 +1,12 @@
-res://tileMap/test_tile_map.tscn
+res://script/main_camera_2d.cs
+res://script/main_world.cs
+res://scene/main_world.tscn
+res://scene/main_camera_2d.tscn
+res://entity/static/factory.tscn
+res://ui/player_cursor.tscn
+res://script/player_cursor.cs
+res://ui/main_camera_2d.tscn
+res://script/factory.cs
+res://script/entity/factory.cs
+res://script/ui/main_camera_2d.cs
+res://script/ui/player_cursor.cs

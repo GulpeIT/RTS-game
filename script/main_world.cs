@@ -3,13 +3,12 @@ using System;
 
 public partial class main_world : Node2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		//Закрытие проекта || close project # Переделать
+		if (Input.IsActionJustPressed("ui_close")){
+			GetTree().Quit();
+		}
+
 	}
 }

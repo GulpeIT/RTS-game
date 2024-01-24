@@ -1,5 +1,7 @@
+CanvasLayer
+Sprite2D
+Camera2D
 TileMap
 CollisionShape2D
-Sprite2D
 StaticBody2D
 GPUParticles2D

@@ -1,0 +1,17 @@
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\bin\Debug\RTS-game.deps.json
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\bin\Debug\RTS-game.runtimeconfig.json
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\bin\Debug\RTS-game.dll
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\bin\Debug\RTS-game.pdb
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.csproj.AssemblyReference.cache
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.AssemblyInfoInputs.cache
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.AssemblyInfo.cs
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.csproj.CoreCompileInputs.cache
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.csproj.CopyComplete
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.dll
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\refint\RTS-game.dll
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.pdb
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\RTS-game.genruntimeconfig.cache
+C:\Users\grish\OneDrive\Documents\Game\RTS-game\.godot\mono\temp\obj\Debug\ref\RTS-game.dll
