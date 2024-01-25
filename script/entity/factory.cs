@@ -4,9 +4,21 @@ using System;
 
 public partial class factory : StaticBody2D
 {
+	[Export] public float income = 5f;
+	[Export] public bool isTrunOn = false;
 
-    public override void _Process(double delta)
-    {
-        
-    }
+	[Export] public healthComponent health;
+	[Export] public hurtBoxComponent hurtBox;
+
+	[Export] private GpuParticles2D smoke;
+
+	public override void _Ready(){
+		
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		//Управление частицами дыма || Controle smoke particle
+		smoke.Emitting = isTrunOn;
+	}
 }

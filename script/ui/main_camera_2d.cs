@@ -7,6 +7,7 @@ public partial class main_camera_2d : Camera2D
 	[Export] private float cameraEdge = 5f;
 	
 	[Export] private bool cameraCanMove = true;
+	
 
 	public override void _Process(double delta){
 		//Позиция курсора на Viewport. || position cursor on Viewport.
@@ -33,4 +34,5 @@ public partial class main_camera_2d : Camera2D
 		}
 		#endregion
 	}
+	
 }

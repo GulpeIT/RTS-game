@@ -25,7 +25,4 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 65538, 0, 0, 655
 [node name="Factory" parent="." instance=ExtResource("3_a4om7")]
 y_sort_enabled = true
 position = Vector2(-8, -8)
-
-[node name="Factory2" parent="." instance=ExtResource("3_a4om7")]
-y_sort_enabled = true
-position = Vector2(-8, -24)
+isTrunOn = true

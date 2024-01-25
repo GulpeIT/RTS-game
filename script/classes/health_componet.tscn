@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xwkdb25sscvk"]
+
+[ext_resource type="Script" path="res://script/classes/health_component.cs" id="1_o021f"]
+
+[node name="HealthComponet" type="Node2D"]
+script = ExtResource("1_o021f")
+health = null
+armory = null
