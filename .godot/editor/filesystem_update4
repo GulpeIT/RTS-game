@@ -1,4 +1,7 @@
-res://scene/main_world.tscn
-res://entity/static/factory.tscn
+res://script/classes/damagePackage.cs
+res://script/entity/factory.cs
+res://script/main_world.cs
+res://script/ui/main_camera_2d.cs
+res://script/ui/player_cursor.cs
 res://script/classes/health_componet.tscn
-res://script/classes/hurt_box_component.tscn
+res://entity/static/factory.tscn
