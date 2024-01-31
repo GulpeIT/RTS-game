@@ -14,7 +14,7 @@ public partial class player_cursor : Node2D
 	}
 
 	public override void _Process(double delta){
-		//Присвоение позиции для собственного курсора || Assigning a position for custom cursor
+		//Присвоение позиции для кастомного курсора || Assigning a position for custom cursor
 		Position = GetGlobalMousePosition();
 
 		//Анимация для курсора || Animation for cursor

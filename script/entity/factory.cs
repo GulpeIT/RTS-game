@@ -7,14 +7,11 @@ public partial class factory : StaticBody2D
 	[Export] public float income = 5f;
 	[Export] public bool isTrunOn = false;
 
-	[Export] public healthComponent health;
-	[Export] public hurtBoxComponent hurtBox;
-
 	[Export] private GpuParticles2D smoke;
 
-	public override void _Ready(){
-		
-	}
+	Sprite2D sprite;
+
+	public override void _Ready() {}
 
 	public override void _PhysicsProcess(double delta)
 	{

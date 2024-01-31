@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://7u0xuypj1x5"]
 
 [ext_resource type="Script" path="res://script/ui/player_cursor.cs" id="1_j23ab"]
-[ext_resource type="Texture2D" uid="uid://sqgs266gds4q" path="res://sprite/cursor_main.png" id="2_cq5is"]
+[ext_resource type="Texture2D" uid="uid://iwaxslegg1ak" path="res://sprite/cursor.png" id="2_usiiq"]
 
 [node name="PlayerCursor" type="Node2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_j23ab")
 sprite = NodePath("Sprite")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_cq5is")
+texture = ExtResource("2_usiiq")
 offset = Vector2(4, 4)
-hframes = 2
+hframes = 4

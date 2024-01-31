@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bum014vcikduv"]
+[gd_scene load_steps=7 format=3 uid="uid://bum014vcikduv"]
 
 [ext_resource type="Script" path="res://script/main_world.cs" id="1_oqp8a"]
 [ext_resource type="PackedScene" uid="uid://bov1s4ai3raln" path="res://tileMap/test_tile_map.tscn" id="2_at37m"]
 [ext_resource type="PackedScene" uid="uid://e0qo8phn35tj" path="res://ui/main_camera_2d.tscn" id="2_w0xmp"]
 [ext_resource type="PackedScene" uid="uid://bbpeqagoqo8ue" path="res://entity/static/factory.tscn" id="3_a4om7"]
 [ext_resource type="PackedScene" uid="uid://7u0xuypj1x5" path="res://ui/player_cursor.tscn" id="5_sr00b"]
+[ext_resource type="PackedScene" uid="uid://crnx6syrmbo22" path="res://entity/kinematic/test_worker_car.tscn" id="6_lextj"]
 
 [node name="MainWorld" type="Node2D"]
 script = ExtResource("1_oqp8a")
@@ -14,7 +15,6 @@ script = ExtResource("1_oqp8a")
 [node name="PlayerCursor" parent="UiLayer" instance=ExtResource("5_sr00b")]
 
 [node name="MainCamera2D" parent="." instance=ExtResource("2_w0xmp")]
-zoom = Vector2(0.8, 0.8)
 cameraSpeed = 1.0
 cameraEdge = 2.5
 
@@ -26,3 +26,6 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 65538, 0, 0, 655
 y_sort_enabled = true
 position = Vector2(-8, -8)
 isTrunOn = true
+
+[node name="TestWorkerCar" parent="." instance=ExtResource("6_lextj")]
+position = Vector2(15, -11)
