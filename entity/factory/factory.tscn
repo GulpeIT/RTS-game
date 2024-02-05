@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbpeqagoqo8ue"]
+
+[ext_resource type="Texture2D" uid="uid://cdutovj6alu6g" path="res://sprite/factory.png" id="1_kb3oe"]
+[ext_resource type="Script" path="res://entity/factory/factory.cs" id="1_o42sj"]
+[ext_resource type="PackedScene" uid="uid://baskmhj8rc3w5" path="res://particle/factory_smoke.tscn" id="2_i6enu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pbxqn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tq2bu"]
+radius = 2.0
+height = 14.0
+
+[node name="Factory" type="StaticBody2D" node_paths=PackedStringArray("smoke")]
+collision_layer = 3
+collision_mask = 16
+physics_material_override = SubResource("PhysicsMaterial_pbxqn")
+script = ExtResource("1_o42sj")
+smoke = NodePath("FactorySmoke")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 8)
+texture = ExtResource("1_kb3oe")
+offset = Vector2(0, -8)
+
+[node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_tq2bu")
+
+[node name="FactorySmoke" parent="." instance=ExtResource("2_i6enu")]
+position = Vector2(4, -3)

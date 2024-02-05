@@ -1,7 +1,6 @@
-res://entity/kinematic
-res://script/classes
+res://ui/player_cursor
+res://sprite
 res://ui
 res://scene
 res://tileMap
-res://entity/static
 res://particle

@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://crnx6syrmbo22"]
+
+[ext_resource type="Script" path="res://entity/test_worker/test_worker_car.cs" id="1_8b4xq"]
+[ext_resource type="Texture2D" uid="uid://c86y5psyvhu6e" path="res://sprite/TestTransport.png" id="1_j3x86"]
+[ext_resource type="Shader" uid="uid://vo0m0e2plt1y" path="res://entity/test_worker/select_test_worker_car.tres" id="1_xutax"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xgx6w"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gagpg"]
+shader = ExtResource("1_xutax")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4geu"]
+atlas = ExtResource("1_j3x86")
+region = Rect2(0, 2, 16, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v14r"]
+atlas = ExtResource("1_j3x86")
+region = Rect2(19, 3, 10, 10)
+
+[node name="TestWorkerCar" type="CharacterBody2D" node_paths=PackedStringArray("wheelbase", "tower")]
+script = ExtResource("1_8b4xq")
+wheelbase = NodePath("WheelBase")
+tower = NodePath("Tower")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 100
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xgx6w")
+debug_color = Color(0.235294, 0.615686, 1, 0.184314)
+
+[node name="SelectFrame" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_gagpg")
+scale = Vector2(1.1, 1.1)
+texture = SubResource("AtlasTexture_r4geu")
+
+[node name="WheelBase" type="Sprite2D" parent="."]
+use_parent_material = true
+texture = SubResource("AtlasTexture_r4geu")
+
+[node name="Tower" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_4v14r")
