@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://ui/cursor/cursor.cs" id="1_o3bob"]
 [ext_resource type="Texture2D" uid="uid://iwaxslegg1ak" path="res://sprite/cursor.png" id="2_usiiq"]
 
-[node name="Cursor" type="Node2D"]
+[node name="Cursor" type="Node2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_o3bob")
+sprite = NodePath("Sprite")
 metadata/_edit_horizontal_guides_ = [-23.0]
 
 [node name="Sprite" type="Sprite2D" parent="."]

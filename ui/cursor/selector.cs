@@ -34,19 +34,24 @@ public partial class selector : ColorRect
 	}
 
 	void _update(){
-		/*
+		float x = 1;
+		float y = 1;
+
+
 		if(GetGlobalMousePosition().X  < startMousePositon.X){
-			Scale.X = 1;
+			x = -1;
 		}
 		else if(GetGlobalMousePosition().X  > startMousePositon.X){
-			Scale = new Vector2(1, 1);
+			x = 1;
 		}
 		if(GetGlobalMousePosition().Y  < startMousePositon.Y){
-			Scale = new Vector2(1, -1);
+			y = -1;
 		}
 		else if(GetGlobalMousePosition().Y  > startMousePositon.Y){
-			Scale = new Vector2(1, 1);
-		}*/
+			y = 1;
+		}
+
+		Scale = new Vector2(x, y);
 
 		Size = (GetGlobalMousePosition() - startMousePositon)*Scale;
 	}
