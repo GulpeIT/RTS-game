@@ -5,18 +5,15 @@ public partial class selector : ColorRect
 	bool mouseDown = false;
 	Vector2 startMousePositon;
 	Vector2 endMousePosition;
-
+	
 	public override void _Input(InputEvent @event)
 	{
-		base._Input(@event);
 		if (Input.IsActionJustPressed("uc_leftMouseButtonClick")){
 			if(!mouseDown){
 				mouseDown = true;
 				startMousePositon = GetGlobalMousePosition();
 			}
 			GlobalPosition = startMousePositon;
-
-
 		}
 		else if(Input.IsActionJustReleased("uc_leftMouseButtonClick")){
 			if (mouseDown){
@@ -25,7 +22,6 @@ public partial class selector : ColorRect
 				Size = Vector2.Zero;
 			}
 		}
-
 		if (@event is InputEventMouseMotion){
 			if (mouseDown){
 				CreateSelectZone();
@@ -56,5 +52,12 @@ public partial class selector : ColorRect
 		Scale = new Vector2(x, y);
 		Size = (globalMousePos - startMousePositon)*Scale;
 	}
+
+	/* TODO:
+	 1) Сделать метод, добавления "unit" в массив для их управления.
+	 2) Очиста выделения.
+	 3) Комбинации для динамического добавления.
+	*/
+	void addIntoArray(){}
 }
 

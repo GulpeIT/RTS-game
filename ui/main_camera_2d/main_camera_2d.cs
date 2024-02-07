@@ -1,19 +1,20 @@
+using System.ComponentModel.Design;
 using Godot;
-using System;
 
 public partial class main_camera_2d : Camera2D
 {
-	[Export] private float cameraSpeed = 1.2f;
-	[Export] private float cameraEdge = 4f;
+	[Export] float _cameraSpeed = 1.2f;
+	[Export] float _cameraEdge = 4f;
 	
-	[Export] private bool cameraCanMove = true;
+	[Export] bool _canMove = true;
 	
+	[Export] float _zoomSpeed = 0.6f;
+	[Export] float _zoomMax = 1f;
+	[Export] float _zoomMin = 1.6f;
 
 	public override void _Process(double delta){
-		if (cameraCanMove){
-			CameraMove();
-		}
-
+		CameraZoom((float)delta);
+		if (_canMove) CameraMove();
 	}
 
 
@@ -24,28 +25,39 @@ public partial class main_camera_2d : Camera2D
 		// Позиция курсора на Viewport
 		Vector2 localMousePosition = GetViewport().GetMousePosition();
 
-		if (cameraCanMove){
+		if (_canMove){
 			// Передвижение влево
-			if (localMousePosition.X <= cameraEdge || Input.IsActionPressed("uc_left")){
-				Position -= new Vector2(cameraSpeed, 0);
+			if (localMousePosition.X <= _cameraEdge || Input.IsActionPressed("uc_left")){
+				Position -= new Vector2(_cameraSpeed, 0);
 			}
 			// Передвижение в право
-			if (localMousePosition.X >= GetViewportRect().Size.X - cameraEdge || Input.IsActionPressed("uc_right")){
-				Position += new Vector2(cameraSpeed, 0);
+			else if (localMousePosition.X >= GetViewportRect().Size.X - _cameraEdge || Input.IsActionPressed("uc_right")){
+				Position += new Vector2(_cameraSpeed, 0);
 			}
 			// Передвижение в верх
-			if (localMousePosition.Y <= cameraEdge || Input.IsActionPressed("uc_up")){
-				Position -= new Vector2(0, cameraSpeed);
+			if (localMousePosition.Y <= _cameraEdge || Input.IsActionPressed("uc_up")){
+				Position -= new Vector2(0, _cameraSpeed);
 			}
 			// Передвижение вниз
-			if (localMousePosition.Y >= GetViewportRect().Size.Y - cameraEdge || Input.IsActionPressed("uc_down")){
-				Position += new Vector2(0, cameraSpeed);
+			else if (localMousePosition.Y >= GetViewportRect().Size.Y - _cameraEdge || Input.IsActionPressed("uc_down")){
+				Position += new Vector2(0, _cameraSpeed);
 			}
 		}
 	}
 
-	//TODO:
-	// Реализовать метод приближение, через колёсико мышки
-	void CameraZoom(){
+	/// <summary>
+	/// Метод приближения камеры
+	/// </summary>
+	/// <param name="delta"></param>
+	void CameraZoom(float delta){
+
+		if (Input.IsActionPressed("uc_zoomIn")){
+			Zoom += new Vector2(_zoomSpeed, _zoomSpeed) * delta;
+		}
+		else if (Input.IsActionPressed("uc_zoomOut")){
+			Zoom -= new Vector2(_zoomSpeed, _zoomSpeed) * delta;
+		}
+		// Ограничение приближения и увелечения камеры
+		Zoom = Zoom.Clamp(new Vector2(_zoomMax, _zoomMax), new Vector2(_zoomMin, _zoomMin));
 	}
 }

@@ -19,7 +19,7 @@ region = Rect2(0, 2, 16, 12)
 atlas = ExtResource("1_j3x86")
 region = Rect2(19, 3, 10, 10)
 
-[node name="TestWorkerCar" type="CharacterBody2D" node_paths=PackedStringArray("wheelbase", "tower")]
+[node name="TestWorkerCar" type="CharacterBody2D" node_paths=PackedStringArray("wheelbase", "tower") groups=["Selectable"]]
 script = ExtResource("1_8b4xq")
 wheelbase = NodePath("WheelBase")
 tower = NodePath("Tower")
