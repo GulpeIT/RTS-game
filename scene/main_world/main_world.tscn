@@ -17,7 +17,6 @@ script = ExtResource("1_jjxys")
 [node name="Cursor" parent="UiLayer" instance=ExtResource("2_e4xwm")]
 
 [node name="MainCamera2D" parent="." instance=ExtResource("3_4y843")]
-zoom = Vector2(1.5, 1.5)
 cameraSpeed = 1.0
 cameraEdge = 2.5
 

@@ -3,5 +3,5 @@
 [ext_resource type="Script" path="res://ui/cursor/selector.cs" id="1_b8roe"]
 
 [node name="Selector" type="ColorRect"]
-color = Color(0.611765, 0.929412, 0.996078, 0.431373)
+color = Color(0.117647, 0.776471, 0.882353, 0.431373)
 script = ExtResource("1_b8roe")

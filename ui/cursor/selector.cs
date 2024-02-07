@@ -9,7 +9,7 @@ public partial class selector : ColorRect
 	public override void _Input(InputEvent @event)
 	{
 		base._Input(@event);
-		if (Input.IsActionJustPressed("uc_leftButtonClick")){
+		if (Input.IsActionJustPressed("uc_leftMouseButtonClick")){
 			if(!mouseDown){
 				mouseDown = true;
 				startMousePositon = GetGlobalMousePosition();
@@ -18,7 +18,7 @@ public partial class selector : ColorRect
 
 
 		}
-		else if(Input.IsActionJustReleased("uc_leftButtonClick")){
+		else if(Input.IsActionJustReleased("uc_leftMouseButtonClick")){
 			if (mouseDown){
 				mouseDown = false;
 				endMousePosition = GetGlobalMousePosition();
@@ -28,32 +28,33 @@ public partial class selector : ColorRect
 
 		if (@event is InputEventMouseMotion){
 			if (mouseDown){
-				_update();
+				CreateSelectZone();
 			}
 		}
 	}
 
-	void _update(){
-		float x = 1;
-		float y = 1;
+	/// <summary>
+	/// Метод создания зоны выделения.
+	/// </summary>
+	void CreateSelectZone(){
+		Vector2 globalMousePos = GetGlobalMousePosition();
+		float x = 1, y = 1;
 
-
-		if(GetGlobalMousePosition().X  < startMousePositon.X){
+		if(globalMousePos.X  < startMousePositon.X){
 			x = -1;
 		}
-		else if(GetGlobalMousePosition().X  > startMousePositon.X){
+		else if(globalMousePos.X  > startMousePositon.X){
 			x = 1;
 		}
-		if(GetGlobalMousePosition().Y  < startMousePositon.Y){
+		if(globalMousePos.Y  < startMousePositon.Y){
 			y = -1;
 		}
-		else if(GetGlobalMousePosition().Y  > startMousePositon.Y){
+		else if(globalMousePos.Y  > startMousePositon.Y){
 			y = 1;
 		}
 
 		Scale = new Vector2(x, y);
-
-		Size = (GetGlobalMousePosition() - startMousePositon)*Scale;
+		Size = (globalMousePos - startMousePositon)*Scale;
 	}
 }
 

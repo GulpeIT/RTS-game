@@ -15,7 +15,7 @@ public partial class cursor : Node2D
 		Position = GetGlobalMousePosition();
 
 		//Анимация для курсора
-		if (Input.IsActionPressed("uc_leftButtonClick")){
+		if (Input.IsActionPressed("uc_leftMouseButtonClick")){
 			sprite.Frame = 1;
 		}
 		else{
