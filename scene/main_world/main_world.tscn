@@ -12,9 +12,11 @@ script = ExtResource("1_jjxys")
 
 [node name="UiLayer" type="CanvasLayer" parent="."]
 
-[node name="Selector" parent="UiLayer" instance=ExtResource("3_cvtwl")]
+[node name="CursorGroup" type="Node2D" parent="UiLayer"]
 
-[node name="Cursor" parent="UiLayer" instance=ExtResource("2_e4xwm")]
+[node name="Selector" parent="UiLayer/CursorGroup" instance=ExtResource("3_cvtwl")]
+
+[node name="Cursor" parent="UiLayer/CursorGroup" instance=ExtResource("2_e4xwm")]
 
 [node name="MainCamera2D" parent="." instance=ExtResource("3_4y843")]
 

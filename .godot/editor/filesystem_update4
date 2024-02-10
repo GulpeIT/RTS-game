@@ -1,6 +1,6 @@
-res://scene/main_world/main_world.tscn
+res://ui/main_camera_2d/main_camera_2d.tscn
 res://entity/test_worker/select_test_worker_car.tres
-res://ui/cursor/selector.tscn
+res://scene/main_world/main_world.tscn
 res://entity/test_worker/test_worker_car.tscn
 res://ui/cursor/cursor.tscn
 res://entity/factory/factory.cs

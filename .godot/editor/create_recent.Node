@@ -1,10 +1,11 @@
+Node2D
+CanvasLayer
 ColorRect
 TextureRect
 Sprite2D
 CollisionShape2D
 CharacterBody2D
 Area2D
-CanvasLayer
 Camera2D
 TileMap
 StaticBody2D

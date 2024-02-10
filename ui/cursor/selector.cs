@@ -33,7 +33,7 @@ public partial class selector : ColorRect
 	/// Метод создания зоны выделения.
 	/// </summary>
 	void CreateSelectZone(){
-		Vector2 globalMousePos = GetGlobalMousePosition();
+		Vector2 globalMousePos = GetGlobalMousePosition() + Vector2.Down;
 		float x = 1, y = 1;
 
 		if(globalMousePos.X  < startMousePositon.X){
