@@ -10,6 +10,7 @@ height = 16.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gagpg"]
 shader = ExtResource("1_xutax")
+shader_parameter/FrameColor = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4geu"]
 atlas = ExtResource("1_j3x86")
@@ -33,7 +34,7 @@ debug_color = Color(0.235294, 0.615686, 1, 0.184314)
 [node name="SelectFrame" type="Sprite2D" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_gagpg")
-scale = Vector2(1.1, 1.1)
+scale = Vector2(1.05, 1.05)
 texture = SubResource("AtlasTexture_r4geu")
 
 [node name="WheelBase" type="Sprite2D" parent="."]

@@ -14,8 +14,6 @@ script = ExtResource("1_jjxys")
 
 [node name="CursorGroup" type="Node2D" parent="UiLayer"]
 
-[node name="Selector" parent="UiLayer/CursorGroup" instance=ExtResource("3_cvtwl")]
-
 [node name="Cursor" parent="UiLayer/CursorGroup" instance=ExtResource("2_e4xwm")]
 
 [node name="MainCamera2D" parent="." instance=ExtResource("3_4y843")]
@@ -25,3 +23,16 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, -1114141, 0, 0, -1048605, 0, 0, -9
 
 [node name="TestWorkerCar" parent="." instance=ExtResource("5_ac4cr")]
 position = Vector2(-36, 1)
+
+[node name="TestWorkerCar2" parent="." node_paths=PackedStringArray("wheelbase", "tower") instance=ExtResource("5_ac4cr")]
+position = Vector2(-55, -50)
+wheelbase = NodePath("../TestWorkerCar/WheelBase")
+tower = NodePath("../TestWorkerCar/Tower")
+
+[node name="TestWorkerCar3" parent="." node_paths=PackedStringArray("wheelbase", "tower") instance=ExtResource("5_ac4cr")]
+position = Vector2(6, -29)
+wheelbase = NodePath("../TestWorkerCar/WheelBase")
+tower = NodePath("../TestWorkerCar/Tower")
+
+[node name="Selector" parent="." instance=ExtResource("3_cvtwl")]
+metadata/_edit_use_anchors_ = true

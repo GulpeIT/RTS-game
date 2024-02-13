@@ -1,28 +1,30 @@
 [gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://vo0m0e2plt1y"]
 
-[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_ctjni"]
-constant = Color(0.0620426, 0.86628, 0.0521572, 1)
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_jtena"]
+parameter_name = "FrameColor"
+default_value_enabled = true
 
 [resource]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
+uniform vec4 FrameColor : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
 
 
 
 void fragment() {
-// ColorConstant:2
-	vec4 n_out2p0 = vec4(0.062043, 0.866280, 0.052157, 1.000000);
+// ColorParameter:3
+	vec4 n_out3p0 = FrameColor;
 
 
 // Output:0
-	COLOR.rgb = vec3(n_out2p0.xyz);
+	COLOR.rgb = vec3(n_out3p0.xyz);
 
 
 }
 "
 mode = 1
 flags/light_only = false
-nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_ctjni")
-nodes/fragment/2/position = Vector2(260, 160)
-nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorParameter_jtena")
+nodes/fragment/3/position = Vector2(-240, 80)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 0)
