@@ -8,25 +8,37 @@ public partial class selector : ColorRect
 	Vector2 _startMousePositon;
 	Vector2 _endMousePosition;
 
+
+	// TODO:
+	// 1) Сделать выделение с помощью Rect2. 🟡
+	Rect2 _selectRect = new Rect2();
+
 	Array<Node> _nodesInRect = new Array<Node> {};
 
-	public override void _UnhandledInput(InputEvent @event){
+    public override void _UnhandledInput(InputEvent @event){
 		base._UnhandledInput(@event);
+
 		if (Input.IsActionJustPressed("uc_leftMouseButtonClick")){
 			if(!_mouseDown){
 				_mouseDown = true;
 				//RemoveUnitInArray();
+
 				_startMousePositon = GetGlobalMousePosition();
 			}
+
 			GlobalPosition = _startMousePositon;
 		}
+
 		else if(Input.IsActionJustReleased("uc_leftMouseButtonClick")){
 			if (_mouseDown){
 				_mouseDown = false;
+
 				_endMousePosition = GetGlobalMousePosition();
 				//AddUnitInArray();
 			}
 		}
+
+
 		if (@event is InputEventMouseMotion){
 			if (_mouseDown){
 				//CreateSelectZone();
