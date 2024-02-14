@@ -4,3 +4,4 @@
 
 [node name="MainCamera2D" type="Camera2D"]
 script = ExtResource("1_464p0")
+_canMoveByEdge = false

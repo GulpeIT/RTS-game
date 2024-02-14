@@ -4,16 +4,18 @@ using Godot.Collections;
 public partial class selector : ColorRect
 {
 	bool _mouseDown = false;
+
 	Vector2 _startMousePositon;
 	Vector2 _endMousePosition;
+
 	Array<Node> _nodesInRect = new Array<Node> {};
-	
-	public override void _Input(InputEvent @event)
-	{
+
+	public override void _UnhandledInput(InputEvent @event){
+		base._UnhandledInput(@event);
 		if (Input.IsActionJustPressed("uc_leftMouseButtonClick")){
 			if(!_mouseDown){
 				_mouseDown = true;
-				RemoveUnitInArray();
+				//RemoveUnitInArray();
 				_startMousePositon = GetGlobalMousePosition();
 			}
 			GlobalPosition = _startMousePositon;
@@ -22,20 +24,17 @@ public partial class selector : ColorRect
 			if (_mouseDown){
 				_mouseDown = false;
 				_endMousePosition = GetGlobalMousePosition();
-				AddUnitInArray();
-				Size = Vector2.Zero;
+				//AddUnitInArray();
 			}
 		}
 		if (@event is InputEventMouseMotion){
 			if (_mouseDown){
-				CreateSelectZone();
+				//CreateSelectZone();
 			}
 		}
 	}
 
-	/// <summary>
-	/// Метод создания зоны выделения.
-	/// </summary>
+	/*
 	void CreateSelectZone(){
 		Vector2 globalMousePos = GetGlobalMousePosition();
 		float x = 1, y = 1;
@@ -54,31 +53,24 @@ public partial class selector : ColorRect
 		}
 
 		Scale = new Vector2(x, y);
-		Size = (globalMousePos - _startMousePositon)*Scale;
+		Size = (globalMousePos - _startMousePositon) * Scale;
 	}
 
-	/* TODO:
-	 1) Сделать метод, добавления "unit" в массив для их управления. ✅
-	 2) Очиста выделения. ✅
-	 3) Комбинации для динамического добавления.
-	*/
+	
 	void AddUnitInArray(){
 		Array<Node> nodesToGet = GetTree().GetNodesInGroup("Selectable");
 
+		Rect2 rect2 = GetGlobalRect();
+		rect2.Size *= Scale;
+
 		if (nodesToGet != null){
-			GD.Print("GetNodesType Success");
 			foreach (test_worker_car node in nodesToGet){
 				if (GetGlobalRect().HasPoint(node.GlobalPosition)){
 					_nodesInRect.Add(node);
 					node.Select();
 				}
-
-				GD.Print("this node " + node);
-				GD.Print("Node pos: " + node.GlobalPosition + " Rect: " + GetGlobalRect());
-				GD.Print("Node has point?: " + GetGlobalRect().HasPoint(node.GlobalPosition));
 			}
 		}
-
 		GD.Print(_nodesInRect);
 	}
 
@@ -87,7 +79,7 @@ public partial class selector : ColorRect
 			node.UnSelect();
 		}
 		_nodesInRect.Clear();
-		GD.Print("Array clear");
 	}
+	*/
 }
 

@@ -1,6 +1,10 @@
+Label
+VBoxContainer
+Node
+ColorRect
+CheckBox
 Node2D
 CanvasLayer
-ColorRect
 TextureRect
 Sprite2D
 CollisionShape2D
@@ -9,4 +13,3 @@ Area2D
 Camera2D
 TileMap
 StaticBody2D
-GPUParticles2D

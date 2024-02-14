@@ -1,7 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1bhh248024yn"]
+[gd_scene format=3 uid="uid://b1bhh248024yn"]
 
-[ext_resource type="Script" path="res://ui/cursor/selector.cs" id="1_b8roe"]
-
-[node name="Selector" type="ColorRect"]
-color = Color(0.117647, 0.776471, 0.882353, 0.431373)
-script = ExtResource("1_b8roe")
+[node name="Selector" type="Node2D"]
