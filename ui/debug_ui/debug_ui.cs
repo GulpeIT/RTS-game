@@ -38,7 +38,7 @@ public partial class debug_ui : Control{
 	/// <param name="toggled_on"></param>
 	private void _on_full_screen_check_button_toggled(bool toggled_on){
 		if (toggled_on){
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.ExclusiveFullscreen);
 		}
 		else{
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);

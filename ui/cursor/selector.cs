@@ -15,7 +15,7 @@ public partial class selector : ColorRect
 
 	Array<Node> _nodesInRect = new Array<Node> {};
 
-    public override void _UnhandledInput(InputEvent @event){
+	public override void _UnhandledInput(InputEvent @event){
 		base._UnhandledInput(@event);
 
 		if (Input.IsActionJustPressed("uc_leftMouseButtonClick")){
