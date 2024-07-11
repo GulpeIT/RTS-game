@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://iwaxslegg1ak" path="res://sprite/cursor.png" id="2_usiiq"]
 
 [node name="Cursor" type="Node2D"]
+visible = false
 script = ExtResource("1_o3bob")
 metadata/_edit_horizontal_guides_ = [-23.0]
 

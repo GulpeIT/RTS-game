@@ -1,6 +1,9 @@
+res://ui
+res://
+res://scene/player_builder
+res://ui/bottom_menu
 res://ui/debug_ui
 res://sprite
-res://ui
 res://scene
 res://tileMap
 res://particle

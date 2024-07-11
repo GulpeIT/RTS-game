@@ -16,7 +16,7 @@ public partial class debug_ui : Control{
 	public override void _Process(double delta){
 		base._Process(delta);
 
-		FPSCount.Text = $"{Engine.GetFramesPerSecond()} :FPS";
+		FPSCount.Text = $"FPS :{Engine.GetFramesPerSecond()}";
 	}
 
 	public override void _Input(InputEvent @event){

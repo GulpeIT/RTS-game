@@ -2,34 +2,30 @@ using Godot;
 
 public partial class main_camera_2d : Camera2D
 {
-	[Export] float _cameraSpeed = 1.2f;
-	[Export] float _cameraEdge = 4f;
+	[Export] public float _cameraSpeed = 1.2f;
+	[Export] public float _cameraEdge = 4f;
 
-	[Export] bool _canMoveByEdge = true;
+	[Export] public bool _canMoveByEdge = false;
+	private bool _dragging;
 
-	[Export] float _zoomSpeed = 0.6f;
-	[Export] float _zoomMax = 1f;
-	[Export] float _zoomMin = 1.6f;
+	[Export] public float _zoomSpeed = 0.6f;
+	[Export] public float _zoomMax = 1f;
+	[Export] public float _zoomMin = 1.6f;
 
-	Vector2 _start_position;
-	Vector2 _mouse_position;
-	bool _dragging;
-
-	public override void _Ready(){
-		base._Ready();
-		
-	}
+	private Vector2 _startPosition;
+	private Vector2 _mousePosition;
 
 	public override void _UnhandledInput(InputEvent @event)
 	{
+		// Передвижение камеры правой кнопкой мыши
 		if (@event.IsAction("uc_rightMouseButtonClick"))
 		{
 			if (@event is InputEventMouseButton eventMouse)
 			{
 				if (eventMouse.IsPressed())
 				{
-					_start_position = Position;
-					_mouse_position = eventMouse.Position;
+					_startPosition = Position;
+					_mousePosition = eventMouse.Position;
 					_dragging = true;
 				}
 				else _dragging = false;
@@ -37,7 +33,7 @@ public partial class main_camera_2d : Camera2D
 		}
 		else if (@event is InputEventMouseMotion eventMouseM && _dragging)
 		{
-			Vector2 newPos = ((_mouse_position - eventMouseM.Position) / Zoom) + _start_position;
+			Vector2 newPos = ((_mousePosition - eventMouseM.Position) / Zoom) + _startPosition;
 			Position = newPos;
 		}
 	}

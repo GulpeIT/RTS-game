@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7exc2k2fi4dk"]
+
+[ext_resource type="Script" path="res://ui/bottom_menu/bottom_menu.cs" id="1_l8pwa"]
+
+[node name="BottomMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l8pwa")

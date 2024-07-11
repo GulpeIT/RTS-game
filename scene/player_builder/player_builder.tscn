@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfrcscekj6abf"]
+
+[ext_resource type="Script" path="res://scene/player_builder/player_builder.cs" id="1_kq2mh"]
+[ext_resource type="Texture2D" uid="uid://k0863gggg6ks" path="res://sprite/SpriteGroundBorder.png" id="1_wtc8u"]
+
+[node name="PlayerBuilder" type="Node2D"]
+position = Vector2(8, 8)
+script = ExtResource("1_kq2mh")
+_maxDistant = 10.0
+metadata/_edit_horizontal_guides_ = [-37.0]
+
+[node name="SpriteGroundBorder" type="Sprite2D" parent="."]
+position = Vector2(-8, -8)
+texture = ExtResource("1_wtc8u")
+centered = false

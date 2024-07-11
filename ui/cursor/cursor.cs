@@ -7,8 +7,9 @@ public partial class cursor : Node2D
 	public override void _Ready(){
 		// Скрытие системного курсора
 		DisplayServer.MouseSetMode(DisplayServer.MouseMode.Hidden);
-		// Получение "Sprite" кастомного курсора
+		// Получение "Sprite" собственного курсора
 		_sprite = GetNode<Sprite2D>("Sprite");
+		Visible = true;
 	}
 
 	public override void _Input(InputEvent @event){
@@ -24,7 +25,7 @@ public partial class cursor : Node2D
 	}
 
 	public override void _Process(double delta){
-		// Присвоение позиции для кастомного курсора
+		// Присвоение позиции для собственного курсора
 		Position = GetGlobalMousePosition();
 	}
 }

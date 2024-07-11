@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "x6wusqBiyqvGDKC6Cl5XApCHsqsDGJvJN1W1Ct1XQk+BXNRd+c2v9uuLAv4N4ia9zGWuNs6qA3fClk8Rv6DjAA==",
+  "dgSpecHash": "VAydQaJsxAycvJw7Y+8DBkZAPtdvMuXdwMZrfmqeX+FUm/G6XmPlK/BvZitKqQzJsG19el4V6GZRUaZevCIVOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\grish\\OneDrive\\Documents\\Game\\RTS-game\\RTS-game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\grish\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
-    "C:\\Users\\grish\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
-    "C:\\Users\\grish\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512"
+    "C:\\Users\\grish\\.nuget\\packages\\godot.sourcegenerators\\4.2.2\\godot.sourcegenerators.4.2.2.nupkg.sha512",
+    "C:\\Users\\grish\\.nuget\\packages\\godotsharp\\4.2.2\\godotsharp.4.2.2.nupkg.sha512",
+    "C:\\Users\\grish\\.nuget\\packages\\godotsharpeditor\\4.2.2\\godotsharpeditor.4.2.2.nupkg.sha512"
   ],
   "logs": []
 }
