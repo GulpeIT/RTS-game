@@ -12,3 +12,4 @@ res://entity/factory/factory.cs
 res://scene/player_builder/player_builder.cs
 res://scene/main_world/main_world.cs
 res://ui/main_ui/main_ui.tscn
+res://ui/main_ui/main_ui.cs

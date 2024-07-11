@@ -1,15 +1,16 @@
 using Godot;
-using System;
 
-public partial class main_ui : Control
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
+public partial class main_ui : Control {
+	Button closeButton;
+
+	public override void _Ready(){
+		closeButton = GetNode<Button>("CloseGame");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+	public override void _Process(double delta){
+	}
+
+	private void _on_close_game_button_pressed(){
+		GetTree().Quit();
 	}
 }
