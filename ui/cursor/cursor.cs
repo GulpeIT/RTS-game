@@ -28,4 +28,8 @@ public partial class cursor : Node2D
 		// Присвоение позиции для собственного курсора
 		Position = GetGlobalMousePosition();
 	}
+
+	private void _on_tree_exited(){
+		DisplayServer.MouseSetMode(DisplayServer.MouseMode.Visible);
+	}
 }

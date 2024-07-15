@@ -1,27 +1,28 @@
 using Godot;
 
-public partial class debug_ui : Control{
+public partial class debug : Control{
 	
-	[Export] bool _show = false;
+	[Export] private bool _show = false;
+	[Export] private Label _FPSCount;
+	private Camera2D _camera;
 
-	[Export] Label FPSCount;
 
 	public override void _Ready(){
 		base._Ready();
-		FPSCount = GetNode<Label>("FPSCountLabel");
-
+		_FPSCount = GetNode<Label>("FPSCountLabel");
+		_camera = FindParent("MainWorld").GetNode<Camera2D>("MainCamera2D");
 		Visible = _show;
+
+		
 	}
 
 	public override void _Process(double delta){
 		base._Process(delta);
-
-		FPSCount.Text = $"FPS :{Engine.GetFramesPerSecond()}";
+		
+		_FPSCount.Text = $"FPS :{Engine.GetFramesPerSecond()}";
 	}
 
 	public override void _Input(InputEvent @event){
-		base._Input(@event);
-
 		if (Input.IsActionJustPressed("ui_debug") && !_show){
 			_show = true;
 			Visible = _show;
@@ -30,6 +31,8 @@ public partial class debug_ui : Control{
 			_show = false;
 			Visible = _show;
 		}
+
+		
 	}
 
 	/// <summary>
@@ -42,6 +45,16 @@ public partial class debug_ui : Control{
 		}
 		else{
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+		}
+	}
+
+	/// <summary>
+	/// Метод включения движения по краю экрана (для удобства разработки)
+	/// </summary>
+	/// <param name="toggled_on"></param>
+	private void _on_move_by_edge_check_button_toggled(bool toggled_on){
+		if (_camera is main_camera_2d camera2D){
+			camera2D._canMoveByEdge = toggled_on;
 		}
 	}
 }

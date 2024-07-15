@@ -4,3 +4,6 @@
 
 [node name="MainCamera2D" type="Camera2D"]
 script = ExtResource("1_464p0")
+_zoomSpeed = 0.725
+_zoomMax = 0.8
+_zoomMin = 1.8

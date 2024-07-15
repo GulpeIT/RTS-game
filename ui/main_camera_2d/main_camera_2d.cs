@@ -15,9 +15,11 @@ public partial class main_camera_2d : Camera2D
 	private Vector2 _startPosition;
 	private Vector2 _mousePosition;
 
-	public override void _UnhandledInput(InputEvent @event)
-	{
-		// Передвижение камеры правой кнопкой мыши
+	private float _delta;
+
+
+    public override void _UnhandledInput(InputEvent @event){
+		#region Передвижение камеры правой кнопкой мыши
 		if (@event.IsAction("uc_rightMouseButtonClick"))
 		{
 			if (@event is InputEventMouseButton eventMouse)
@@ -36,17 +38,33 @@ public partial class main_camera_2d : Camera2D
 			Vector2 newPos = ((_mousePosition - eventMouseM.Position) / Zoom) + _startPosition;
 			Position = newPos;
 		}
+		#endregion
+
+		#region Приближение камеры на колёсико мышки
+		if (@event is InputEventMouseButton eventMiddleMouse){
+			if (eventMiddleMouse.ButtonIndex == MouseButton.WheelUp){
+				CameraZoom(_zoomSpeed * 10f);
+			}
+			else if (eventMiddleMouse.ButtonIndex == MouseButton.WheelDown){
+				CameraZoom(-_zoomSpeed * 10f);
+			}
+		}
+		#endregion 
 	}
 
 	public override void _Process(double delta){
-		CameraZoom((float)delta);
+		_delta = (float)delta;
 		if (_canMoveByEdge) CameraEdgeMove();
+
+		CameraZoom();
+		// Ограничение приближение камеры
+		Zoom = Zoom.Clamp(new Vector2(_zoomMax, _zoomMax), new Vector2(_zoomMin, _zoomMin));
 	}
 
 	/// <summary>
 	/// Метод управлением камеры
 	/// </summary>
-	void CameraEdgeMove(){
+	private void CameraEdgeMove(){
 		// Позиция курсора на Viewport
 		Vector2 localMousePosition = GetViewport().GetMousePosition();
 
@@ -73,16 +91,16 @@ public partial class main_camera_2d : Camera2D
 	/// <summary>
 	/// Метод приближения камеры
 	/// </summary>
-	/// <param name="delta"></param>
-	void CameraZoom(float delta){
+	private void CameraZoom(){
 		if (Input.IsActionPressed("uc_zoomIn")){
-			Zoom += new Vector2(_zoomSpeed, _zoomSpeed) * delta;
+			Zoom += new Vector2(_zoomSpeed, _zoomSpeed) * _delta;
 		}
 		else if (Input.IsActionPressed("uc_zoomOut")){
-			Zoom -= new Vector2(_zoomSpeed, _zoomSpeed) * delta;
+			Zoom -= new Vector2(_zoomSpeed, _zoomSpeed) * _delta;
 		}
-		// Ограничение приближения и увелечения камеры
-		Zoom = Zoom.Clamp(new Vector2(_zoomMax, _zoomMax), new Vector2(_zoomMin, _zoomMin));
+	}
+	private void CameraZoom(float zoomSpeed){
+		Zoom += new Vector2(zoomSpeed, zoomSpeed) * _delta;
 	}
 
 	/// <summary>

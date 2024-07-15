@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://decwpml2cun33"]
+
+[ext_resource type="Script" path="res://scene/main_menu/main_menu.cs" id="1_6civd"]
+[ext_resource type="PackedScene" uid="uid://bum014vcikduv" path="res://scene/main_world/main_world.tscn" id="2_gkgrv"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6civd")
+startGameScene = ExtResource("2_gkgrv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.58
+anchor_right = 0.252
+anchor_bottom = 1.0
+offset_top = -0.0400085
+offset_right = -0.0240021
+grow_vertical = 0
+
+[node name="ButtonStartGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Начать игру"
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Настройки
+"
+
+[node name="ButtonExit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Выйти
+"
+
+[connection signal="pressed" from="VBoxContainer/ButtonStartGame" to="." method="_on_button_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
